@@ -12,7 +12,6 @@ namespace ANSystem.Model
     /// </summary>
     public class Sportsman
     {
-
         /// <summary>
         /// Имя
         /// </summary>
@@ -21,9 +20,10 @@ namespace ANSystem.Model
         /// Фамилия
         /// </summary>
         public string LastName { get; set; }
-
+        /// <summary>
+        /// Дата рождения
+        /// </summary>
         public DateTime DateOfBirth { get; set; }
-
         /// <summary>
         /// Электронная почта
         /// </summary>
@@ -51,16 +51,12 @@ namespace ANSystem.Model
         /// <summary>
         /// Персональные рекорды
         /// </summary>
-        private List<Training> Trainings;
+        public List<Training> Trainings { get; set; }
+
 
         public override string ToString()
         {
             return FirstName + " " + LastName;
-        }
-
-        public static implicit operator List<object>(Sportsman v)
-        {
-            throw new NotImplementedException();
         }
     }
 }

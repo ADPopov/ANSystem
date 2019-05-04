@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Data\FakeData.cs" />
+    <Compile Include="Helpers\ImageChange.cs" />
     <Compile Include="Model\Sportsman.cs" />
     <Compile Include="Model\Training.cs" />
     <Compile Include="View\SpotsmanAddForm.cs">
@@ -110,8 +111,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Recources\camera_200.png" />
     <None Include="Resources\camera_200.png" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

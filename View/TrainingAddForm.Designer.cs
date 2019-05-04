@@ -28,44 +28,38 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.label1 = new System.Windows.Forms.Label();
+            this.label = new System.Windows.Forms.Label();
             this.distanceBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.UnitSystemBox = new System.Windows.Forms.ComboBox();
-            this.hourBox = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.minBox = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
-            this.secBox = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.KindOfSportsBox = new System.Windows.Forms.ComboBox();
+            this.kindOfSportsBox = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.dateTimeTrBox = new System.Windows.Forms.DateTimePicker();
-            this.TimeBox = new System.Windows.Forms.MaskedTextBox();
+            this.dateTrainingBox = new System.Windows.Forms.DateTimePicker();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.NameTr = new System.Windows.Forms.TextBox();
+            this.nameTr = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.DescriptionBox = new System.Windows.Forms.TextBox();
+            this.descriptionBox = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.AddTrBtn = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.timeTrainingBox = new System.Windows.Forms.DateTimePicker();
+            this.durationBox = new System.Windows.Forms.DateTimePicker();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.placeBox = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
-            // label1
+            // label
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label1.Location = new System.Drawing.Point(13, 13);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(195, 25);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Новая тренировка";
+            this.label.AutoSize = true;
+            this.label.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label.Location = new System.Drawing.Point(13, 13);
+            this.label.Name = "label";
+            this.label.Size = new System.Drawing.Size(195, 25);
+            this.label.TabIndex = 0;
+            this.label.Text = "Новая тренировка";
             // 
             // distanceBox
             // 
@@ -95,111 +89,13 @@
             this.UnitSystemBox.TabIndex = 3;
             this.UnitSystemBox.Text = "км";
             // 
-            // hourBox
+            // kindOfSportsBox
             // 
-            this.hourBox.BackColor = System.Drawing.Color.White;
-            this.hourBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.hourBox.Location = new System.Drawing.Point(222, 66);
-            this.hourBox.Name = "hourBox";
-            this.hourBox.Size = new System.Drawing.Size(25, 13);
-            this.hourBox.TabIndex = 4;
-            this.hourBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(249, 66);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(15, 13);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "ч.";
-            // 
-            // textBox3
-            // 
-            this.textBox3.BackColor = System.Drawing.Color.White;
-            this.textBox3.Enabled = false;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox3.Location = new System.Drawing.Point(220, 62);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(46, 22);
-            this.textBox3.TabIndex = 4;
-            // 
-            // textBox4
-            // 
-            this.textBox4.BackColor = System.Drawing.Color.White;
-            this.textBox4.Enabled = false;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox4.Location = new System.Drawing.Point(275, 62);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(60, 22);
-            this.textBox4.TabIndex = 4;
-            // 
-            // minBox
-            // 
-            this.minBox.BackColor = System.Drawing.Color.White;
-            this.minBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.minBox.Location = new System.Drawing.Point(276, 66);
-            this.minBox.Name = "minBox";
-            this.minBox.Size = new System.Drawing.Size(24, 13);
-            this.minBox.TabIndex = 4;
-            this.minBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(304, 66);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(30, 13);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "мин.";
-            // 
-            // textBox6
-            // 
-            this.textBox6.BackColor = System.Drawing.Color.White;
-            this.textBox6.Enabled = false;
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.textBox6.Location = new System.Drawing.Point(344, 62);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(60, 22);
-            this.textBox6.TabIndex = 4;
-            // 
-            // secBox
-            // 
-            this.secBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.secBox.Location = new System.Drawing.Point(345, 66);
-            this.secBox.Name = "secBox";
-            this.secBox.Size = new System.Drawing.Size(26, 13);
-            this.secBox.TabIndex = 4;
-            this.secBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(375, 66);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(28, 13);
-            this.label5.TabIndex = 5;
-            this.label5.Text = "сек.";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(222, 43);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(173, 13);
-            this.label6.TabIndex = 6;
-            this.label6.Text = "Продолжительность тренировки";
-            // 
-            // KindOfSportsBox
-            // 
-            this.KindOfSportsBox.FormattingEnabled = true;
-            this.KindOfSportsBox.Location = new System.Drawing.Point(18, 119);
-            this.KindOfSportsBox.Name = "KindOfSportsBox";
-            this.KindOfSportsBox.Size = new System.Drawing.Size(172, 21);
-            this.KindOfSportsBox.TabIndex = 7;
+            this.kindOfSportsBox.FormattingEnabled = true;
+            this.kindOfSportsBox.Location = new System.Drawing.Point(18, 119);
+            this.kindOfSportsBox.Name = "kindOfSportsBox";
+            this.kindOfSportsBox.Size = new System.Drawing.Size(172, 21);
+            this.kindOfSportsBox.TabIndex = 7;
             // 
             // label7
             // 
@@ -210,22 +106,14 @@
             this.label7.TabIndex = 8;
             this.label7.Text = "Вид тренировки";
             // 
-            // dateTimeTrBox
+            // dateTrainingBox
             // 
-            this.dateTimeTrBox.Location = new System.Drawing.Point(220, 119);
-            this.dateTimeTrBox.Name = "dateTimeTrBox";
-            this.dateTimeTrBox.Size = new System.Drawing.Size(119, 20);
-            this.dateTimeTrBox.TabIndex = 9;
-            // 
-            // TimeBox
-            // 
-            this.TimeBox.Location = new System.Drawing.Point(345, 119);
-            this.TimeBox.Mask = "00:00";
-            this.TimeBox.Name = "TimeBox";
-            this.TimeBox.Size = new System.Drawing.Size(59, 20);
-            this.TimeBox.TabIndex = 10;
-            this.TimeBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.TimeBox.ValidatingType = typeof(System.DateTime);
+            this.dateTrainingBox.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dateTrainingBox.Location = new System.Drawing.Point(220, 119);
+            this.dateTrainingBox.Name = "dateTrainingBox";
+            this.dateTrainingBox.Size = new System.Drawing.Size(102, 20);
+            this.dateTrainingBox.TabIndex = 9;
+            this.dateTrainingBox.ValueChanged += new System.EventHandler(this.dateTimeTrBox_ValueChanged);
             // 
             // label8
             // 
@@ -239,18 +127,18 @@
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(345, 100);
+            this.label9.Location = new System.Drawing.Point(329, 99);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(40, 13);
             this.label9.TabIndex = 12;
             this.label9.Text = "Время";
             // 
-            // NameTr
+            // nameTr
             // 
-            this.NameTr.Location = new System.Drawing.Point(18, 177);
-            this.NameTr.Name = "NameTr";
-            this.NameTr.Size = new System.Drawing.Size(202, 20);
-            this.NameTr.TabIndex = 13;
+            this.nameTr.Location = new System.Drawing.Point(18, 175);
+            this.nameTr.Name = "nameTr";
+            this.nameTr.Size = new System.Drawing.Size(172, 20);
+            this.nameTr.TabIndex = 13;
             // 
             // label10
             // 
@@ -261,13 +149,13 @@
             this.label10.TabIndex = 14;
             this.label10.Text = "Название";
             // 
-            // DescriptionBox
+            // descriptionBox
             // 
-            this.DescriptionBox.Location = new System.Drawing.Point(18, 235);
-            this.DescriptionBox.Multiline = true;
-            this.DescriptionBox.Name = "DescriptionBox";
-            this.DescriptionBox.Size = new System.Drawing.Size(385, 86);
-            this.DescriptionBox.TabIndex = 15;
+            this.descriptionBox.Location = new System.Drawing.Point(18, 235);
+            this.descriptionBox.Multiline = true;
+            this.descriptionBox.Name = "descriptionBox";
+            this.descriptionBox.Size = new System.Drawing.Size(385, 86);
+            this.descriptionBox.TabIndex = 15;
             // 
             // label11
             // 
@@ -280,7 +168,8 @@
             // 
             // AddTrBtn
             // 
-            this.AddTrBtn.Location = new System.Drawing.Point(328, 336);
+            this.AddTrBtn.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.AddTrBtn.Location = new System.Drawing.Point(328, 327);
             this.AddTrBtn.Name = "AddTrBtn";
             this.AddTrBtn.Size = new System.Drawing.Size(75, 23);
             this.AddTrBtn.TabIndex = 17;
@@ -290,44 +179,85 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(247, 336);
+            this.button2.Location = new System.Drawing.Point(247, 327);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 18;
             this.button2.Text = "Отмена";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // timeTrainingBox
+            // 
+            this.timeTrainingBox.Cursor = System.Windows.Forms.Cursors.Default;
+            this.timeTrainingBox.CustomFormat = "HH:mm";
+            this.timeTrainingBox.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.timeTrainingBox.Location = new System.Drawing.Point(328, 119);
+            this.timeTrainingBox.Name = "timeTrainingBox";
+            this.timeTrainingBox.ShowUpDown = true;
+            this.timeTrainingBox.Size = new System.Drawing.Size(60, 20);
+            this.timeTrainingBox.TabIndex = 19;
+            this.timeTrainingBox.Value = new System.DateTime(2019, 5, 4, 16, 55, 0, 0);
+            // 
+            // durationBox
+            // 
+            this.durationBox.CustomFormat = "HH:MM:ss";
+            this.durationBox.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.durationBox.Location = new System.Drawing.Point(220, 62);
+            this.durationBox.Name = "durationBox";
+            this.durationBox.ShowUpDown = true;
+            this.durationBox.Size = new System.Drawing.Size(111, 20);
+            this.durationBox.TabIndex = 20;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(220, 44);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(111, 13);
+            this.label12.TabIndex = 21;
+            this.label12.Text = "Продолжительность";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(223, 158);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(39, 13);
+            this.label3.TabIndex = 22;
+            this.label3.Text = "Место";
+            // 
+            // placeBox
+            // 
+            this.placeBox.Location = new System.Drawing.Point(220, 175);
+            this.placeBox.Name = "placeBox";
+            this.placeBox.Size = new System.Drawing.Size(183, 20);
+            this.placeBox.TabIndex = 23;
+            // 
             // TrainingAddForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(418, 370);
+            this.ClientSize = new System.Drawing.Size(418, 357);
+            this.Controls.Add(this.placeBox);
+            this.Controls.Add(this.label3);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.durationBox);
+            this.Controls.Add(this.timeTrainingBox);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.AddTrBtn);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.DescriptionBox);
+            this.Controls.Add(this.descriptionBox);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.NameTr);
+            this.Controls.Add(this.nameTr);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.TimeBox);
-            this.Controls.Add(this.dateTimeTrBox);
+            this.Controls.Add(this.dateTrainingBox);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.KindOfSportsBox);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.secBox);
-            this.Controls.Add(this.minBox);
-            this.Controls.Add(this.hourBox);
+            this.Controls.Add(this.kindOfSportsBox);
             this.Controls.Add(this.UnitSystemBox);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox6);
             this.Controls.Add(this.distanceBox);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.label);
             this.Name = "TrainingAddForm";
             this.Text = "TrainingAddForm";
             this.Load += new System.EventHandler(this.TrainingAddForm_Load);
@@ -338,31 +268,25 @@
 
         #endregion
 
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label;
         private System.Windows.Forms.TextBox distanceBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox UnitSystemBox;
-        private System.Windows.Forms.TextBox hourBox;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox minBox;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox secBox;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox KindOfSportsBox;
+        private System.Windows.Forms.ComboBox kindOfSportsBox;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DateTimePicker dateTimeTrBox;
-        private System.Windows.Forms.MaskedTextBox TimeBox;
+        private System.Windows.Forms.DateTimePicker dateTrainingBox;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox NameTr;
+        private System.Windows.Forms.TextBox nameTr;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox DescriptionBox;
+        private System.Windows.Forms.TextBox descriptionBox;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Button AddTrBtn;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.DateTimePicker timeTrainingBox;
+        private System.Windows.Forms.DateTimePicker durationBox;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox placeBox;
     }
 }

@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ANSystem.Helpers;
 using ANSystem.Model;
 
 namespace ANSystem.View
@@ -29,7 +30,7 @@ namespace ANSystem.View
         private void AddBtn_Click(object sender, EventArgs e)
         {
             var stream = new MemoryStream();
-
+            imageBox.Image.Save(stream, ImageFormat.Jpeg);
 
             Sportsman.FirstName = firstNameBox.Text;
             Sportsman.LastName = lastNameBox.Text;
@@ -37,16 +38,7 @@ namespace ANSystem.View
             Sportsman.Gender = genderBox.Text;
             Sportsman.SportsCategory = sportCantegoryBox.Text;
             Sportsman.DateOfBirth = dateOfBirthBox.Value;
-            if (Sportsman.Photo == null)
-            {
-                Sportsman.Photo = imageToByteArray(Properties.Resources.camera_200);
-            }
-            else
-            {
-                imageBox.Image.Save(stream, ImageFormat.Jpeg);
-                Sportsman.Photo = stream.ToArray();
-            }
-            Close();
+            Sportsman.Photo = stream.ToArray();
         }
 
         private void ImageBox_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -86,23 +78,6 @@ namespace ANSystem.View
             sportCantegoryBox.Text = Sportsman.SportsCategory;
             dateOfBirthBox.Value = Sportsman.DateOfBirth;
             imageBox.Image = Im;
-        }
-
-        public static Bitmap ByteToImage(byte[] blob)
-        {
-            MemoryStream mStream = new MemoryStream();
-            byte[] pData = blob;
-            mStream.Write(pData, 0, Convert.ToInt32(pData.Length));
-            Bitmap bm = new Bitmap(mStream, false);
-            mStream.Dispose();
-            return bm;
-        }
-
-        public static byte[] imageToByteArray(System.Drawing.Image imageIn)
-        {
-            MemoryStream ms = new MemoryStream();
-            imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Gif);
-            return ms.ToArray();
         }
     }
 }

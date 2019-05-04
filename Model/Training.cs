@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.Remoting.Messaging;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,12 +12,6 @@ namespace ANSystem.Model
     /// </summary>
     public class Training
     {
-        public Training(DateTime date, int distance)
-        {
-            Date = date;
-            Distance = distance;
-
-        }
         /// <summary>
         /// Дата
         /// </summary>
@@ -30,9 +25,9 @@ namespace ANSystem.Model
         /// </summary>
         public int Distance { get; set; }
         /// <summary>
-        /// Продолжительность
+        /// Продолжительность тренировки
         /// </summary>
-        public int Duration { get; set; }
+        public DateTime Duration { get; set; }
         /// <summary>
         /// Тип
         /// </summary>
@@ -50,9 +45,26 @@ namespace ANSystem.Model
         /// </summary>
         public string Place { get; set; }
 
+        public string UnitSystem { get; set; }
+
+        //class DateTimer
+        //{
+        //    public DateTimer()
+        //    {
+        //        DateTime dt = new DateTime();
+        //        string st = Hour + ":" + Minute + ":" + ":" + Second;
+        //        dt = DateTime.Parse(st);
+        //    }
+
+        //    public int Hour { get; set; }
+        //    public int Minute { get; set; }
+        //    public int Second { get; set; }
+        //}
+
+
         public override string ToString()
         {
-            return "Дата тренировки: " + Date.Hour + "      Дистанция: " + Distance;
+            return NameTraining + " | " + Distance + ' ' + UnitSystem;
         }
     }
 }
