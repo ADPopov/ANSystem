@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -25,10 +26,11 @@ namespace ANSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var ff = new SpotsmanAddForm(SportsmanList, dataListBox) {Sportsman = SportsmanList, Label = "Новый спортсмен"};
-            if (ff.ShowDialog(this) == DialogResult.OK)
+
+            var sa = new SpotsmanAddForm() {Sportsman = new Sportsman() {DateOfBirth = DateTime.Now}, Label = "Новый спортсмен" };
+            if (sa.ShowDialog(this) == DialogResult.OK)
             {
-                dataListBox.Items.Add(ff.Sportsman);
+                dataListBox.Items.Add(sa.Sportsman);
             }
         }
 
@@ -51,17 +53,6 @@ namespace ANSystem
 
         private void listBox1_Click(object sender, EventArgs e)
         {
-            
-            var index = this.dataListBox.SelectedIndex;
-            if (index >= 0 && SportsmanList.Count > 0 && dataListBox.GetSelected(index))
-            {
-                var sp = SportsmanList[index];
-                firstNameBox.Text =  sp.FirstName + " " + sp.FirstName;
-                dateOfBirthBox.Text = sp.DateOfBirth.ToLongDateString();
-                emailBox.Text = sp.Email;
-                pictureBox.Image = ByteToImage(sp.Photo);
-
-            }
         }
 
         public static Bitmap ByteToImage(byte[] blob)
@@ -76,17 +67,36 @@ namespace ANSystem
 
         private void dataListBox_MouseDoubleClick(object sender, MouseEventArgs e)
         {
-            int index = this.dataListBox.IndexFromPoint(e.Location);
-            if (index != System.Windows.Forms.ListBox.NoMatches)
+            int index = dataListBox.IndexFromPoint(e.Location);
+            if (index != ListBox.NoMatches)
             {
                 var item = (Sportsman)dataListBox.Items[index];
-                var ff = new SpotsmanAddForm(SportsmanList, dataListBox) {Sportsman = SportsmanList, Label = "Редактирование" };
+                var ms = new MemoryStream(item.Photo);
+                var ff = new SpotsmanAddForm() {Sportsman = item, Im = Image.FromStream(ms), Label = "Редактирование", BtnTxt = "Изменить"};
                 if (ff.ShowDialog(this) == DialogResult.OK)
                 {
                     dataListBox.Items.Remove(item);
                     dataListBox.Items.Insert(index, item);
                 }
             }
+        }
+
+        private void dataListBox_MouseClick(object sender, MouseEventArgs e)
+        {
+            int index = dataListBox.IndexFromPoint(e.Location);
+            if (index != ListBox.NoMatches)
+            {
+                var item = (Sportsman)dataListBox.Items[index];
+                firstNameBox.Text = item.FirstName + " " + item.LastName;
+                dateOfBirthBox.Text = "Дата рождения: " + item.DateOfBirth.ToLongDateString();
+                emailBox.Text = item.Email;
+                pictureBox.Image = ByteToImage(item.Photo);
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

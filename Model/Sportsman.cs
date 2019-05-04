@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,10 +21,9 @@ namespace ANSystem.Model
         /// Фамилия
         /// </summary>
         public string LastName { get; set; }
-        /// <summary>
-        /// Дата рождения
-        /// </summary>
+
         public DateTime DateOfBirth { get; set; }
+
         /// <summary>
         /// Электронная почта
         /// </summary>
@@ -55,7 +55,7 @@ namespace ANSystem.Model
 
         public override string ToString()
         {
-            return "Имя: " + FirstName + ". /nФамилия: " + LastName;
+            return FirstName + " " + LastName;
         }
 
         public static implicit operator List<object>(Sportsman v)

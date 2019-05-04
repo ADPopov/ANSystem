@@ -15,38 +15,37 @@ namespace ANSystem.View
 {
     public partial class SpotsmanAddForm : Form
     {
-        public ListBox DataListBox { get; set; }
 
-        public List<Sportsman> Sportsman;
-
+        public Sportsman Sportsman { get; set; }
         public string Label;
+        public Image Im;
+        public string BtnTxt = "Добавить";
 
-        public SpotsmanAddForm(List<Sportsman> sportsman, ListBox dataListbox)
+        public SpotsmanAddForm()
         {
             InitializeComponent();
-            DataListBox = dataListbox;
-            Sportsman = sportsman;
-            Sportsman = new List<Sportsman>();
         }
 
         private void AddBtn_Click(object sender, EventArgs e)
         {
             var stream = new MemoryStream();
-            imageBox.Image.Save(stream, ImageFormat.Jpeg);
 
-            var sp = new Sportsman()
+
+            Sportsman.FirstName = firstNameBox.Text;
+            Sportsman.LastName = lastNameBox.Text;
+            Sportsman.Email = emailBox.Text;
+            Sportsman.Gender = genderBox.Text;
+            Sportsman.SportsCategory = sportCantegoryBox.Text;
+            Sportsman.DateOfBirth = dateOfBirthBox.Value;
+            if (Sportsman.Photo == null)
             {
-                FirstName = firstNameBox.Text,
-                LastName = lastNameBox.Text,
-                Email = emailBox.Text,
-                Gender = genderBox.Text,
-                SportsCategory = sportCantegoryBox.Text,
-                DateOfBirth = dateOfBirthBox.Value,
-                Photo = stream.ToArray()
-            };
-            Sportsman.Add(sp);
-            DataListBox.DataSource = null;
-            DataListBox.DataSource = Sportsman;
+                Sportsman.Photo = imageToByteArray(Properties.Resources.camera_200);
+            }
+            else
+            {
+                imageBox.Image.Save(stream, ImageFormat.Jpeg);
+                Sportsman.Photo = stream.ToArray();
+            }
             Close();
         }
 
@@ -78,6 +77,32 @@ namespace ANSystem.View
         private void SpotsmanAddForm_Load(object sender, EventArgs e)
         {
             label4.Text = Label;
+            AddBtn.Text = BtnTxt;
+
+            firstNameBox.Text = Sportsman.FirstName;
+            lastNameBox.Text = Sportsman.LastName;
+            emailBox.Text = Sportsman.Email;
+            genderBox.Text = Sportsman.Gender;
+            sportCantegoryBox.Text = Sportsman.SportsCategory;
+            dateOfBirthBox.Value = Sportsman.DateOfBirth;
+            imageBox.Image = Im;
+        }
+
+        public static Bitmap ByteToImage(byte[] blob)
+        {
+            MemoryStream mStream = new MemoryStream();
+            byte[] pData = blob;
+            mStream.Write(pData, 0, Convert.ToInt32(pData.Length));
+            Bitmap bm = new Bitmap(mStream, false);
+            mStream.Dispose();
+            return bm;
+        }
+
+        public static byte[] imageToByteArray(System.Drawing.Image imageIn)
+        {
+            MemoryStream ms = new MemoryStream();
+            imageIn.Save(ms, System.Drawing.Imaging.ImageFormat.Gif);
+            return ms.ToArray();
         }
     }
 }

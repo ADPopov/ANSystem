@@ -41,12 +41,15 @@
             // 
             // dataListBox
             // 
+            this.dataListBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.dataListBox.FormattingEnabled = true;
+            this.dataListBox.ItemHeight = 20;
             this.dataListBox.Location = new System.Drawing.Point(12, 27);
             this.dataListBox.Name = "dataListBox";
-            this.dataListBox.Size = new System.Drawing.Size(370, 251);
+            this.dataListBox.Size = new System.Drawing.Size(370, 244);
             this.dataListBox.TabIndex = 1;
             this.dataListBox.Click += new System.EventHandler(this.listBox1_Click);
+            this.dataListBox.MouseClick += new System.Windows.Forms.MouseEventHandler(this.dataListBox_MouseClick);
             this.dataListBox.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
             this.dataListBox.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataListBox_MouseDoubleClick);
             // 
@@ -68,6 +71,7 @@
             this.button2.TabIndex = 3;
             this.button2.Text = "Edit";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // textBox1
             // 

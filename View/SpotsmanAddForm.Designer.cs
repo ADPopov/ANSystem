@@ -200,6 +200,7 @@
             // 
             // AddBtn
             // 
+            this.AddBtn.DialogResult = System.Windows.Forms.DialogResult.OK;
             this.AddBtn.Location = new System.Drawing.Point(289, 241);
             this.AddBtn.Name = "AddBtn";
             this.AddBtn.Size = new System.Drawing.Size(75, 23);

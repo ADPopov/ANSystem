@@ -45,6 +45,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Data\FakeData.cs" />
     <Compile Include="Model\Sportsman.cs" />
     <Compile Include="Model\Training.cs" />
     <Compile Include="View\SpotsmanAddForm.cs">
@@ -87,6 +88,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="View\TrainingAddForm.resx">
       <DependentUpon>TrainingAddForm.cs</DependentUpon>
@@ -107,6 +109,9 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Content Include="Recources\camera_200.png" />
+    <None Include="Resources\camera_200.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
